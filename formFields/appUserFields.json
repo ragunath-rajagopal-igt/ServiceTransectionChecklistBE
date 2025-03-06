@@ -1,0 +1,75 @@
+[
+    {
+      "label": "Name",
+      "controlType": "input",
+      "attributes": {
+        "type": "text",
+        "formControlName": "username",
+        "placeholder": "Enter your username",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "maxLength": 50,
+        "minLength": 5,
+        "value": "",
+        "disabled": false,
+        "readonly": false
+      },
+      "validationMessages": {
+        "required": "Username is required.",
+        "maxLength": "Username cannot exceed 50 characters.",
+        "minLength": "Username must be at least 5 characters long."
+      }
+    },
+    {
+      "label": "Email",
+      "controlType": "input",
+      "attributes": {
+        "type": "email",
+        "formControlName": "email",
+        "placeholder": "Enter your email address",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "value": "",
+        "disabled": false,
+        "readonly": false
+      },
+      "validationMessages": {
+        "required": "Email is required.",
+        "email": "Please enter a valid email address."
+      }
+    },
+    {
+      "label": "Role",
+      "controlType": "select",
+      "attributes": {
+        "formControlName": "role",
+        "placeholder": "Select your role",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "value": "",
+        "disabled": false
+      },
+      "options": [],
+      "validationMessages": {
+        "required": "Role is required."
+      }
+    },
+    {
+        "label": "Organization",
+        "controlType": "select",
+        "attributes": {
+          "formControlName": "organization",
+          "placeholder": "Select organization",
+          "required": true,
+          "class": "col-md-12 mb-2",
+          "value": "",
+          "disabled": false,
+          "multiple": true
+        },
+        "options": [],
+        "validationMessages": {
+          "required": "Organization is required."
+        }
+    }
+  ]
+  

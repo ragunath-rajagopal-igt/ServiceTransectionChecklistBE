@@ -1,0 +1,14 @@
+# dotenv environment variable files
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+#nodemodule
+node_modules/
+
+logs/
+
+uploads/
+
+package-lock.json

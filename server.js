@@ -30,6 +30,9 @@ app.use(responseFormatter);
 //Contructural
 app.use("/api/constructural", require("./routes/constructuralRoutes"));
 
+//Data Management
+app.use("/api/data-management", require("./routes/dataManagementRoutes"));
+
 //location transfer
 // app.use("/api/location-transfer", require("./routes/locationTransferRoutes"));
 

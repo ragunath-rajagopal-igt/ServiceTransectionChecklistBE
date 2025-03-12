@@ -33,11 +33,14 @@ app.use("/api/constructural", require("./routes/constructuralRoutes"));
 //Data Management
 app.use("/api/data-management", require("./routes/dataManagementRoutes"));
 
-//location transfer
-// app.use("/api/location-transfer", require("./routes/locationTransferRoutes"));
+//operations
+app.use("/api/operations", require("./routes/operationsRoutes"));
 
-//terminate
-// app.use("/api/terminate", require("./routes/terminateRoutes"));
+//service Management
+app.use("/api/service-management", require("./routes/serviceManagementRoutes"));
+
+//technical
+app.use("/api/technical", require("./routes/technicalRoutes"));
 
 //project movement
 // app.use("/api/project-movement", require("./routes/projectMovementRoutes"));

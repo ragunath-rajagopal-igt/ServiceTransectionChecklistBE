@@ -1,0 +1,129 @@
+[
+    {
+        "label": "Severity",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "severity",
+        "placeholder": "Select Severity",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    },
+    {
+        "label": "SubArea",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "subArea",
+        "placeholder": "Select SubArea",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    },
+    {
+        "label": "item/Activity",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "itemActivity",
+        "placeholder": "Select Item/Activity",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    },
+    {
+        "label": "Product Name",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "productName",
+        "placeholder": "Select Product Name",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    },
+    {
+        "label": "Owner",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "owner",
+        "placeholder": "Select Owner",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    },
+    {
+        "label": "Status",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "status",
+        "placeholder": "Select Status",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    },
+    {
+        "label": "ETA",
+        "controlType": "date",
+        "attributes": {
+            "type": "date",
+            "formControlName": "eta",
+            "required":true,
+            "placeholder": "ETA",
+            "class": "col-md-12 mb-2",
+            "disabled": false,
+            "hidden": false,
+            "value": "",
+            "readonly": false
+        },
+        "validationMessages": {
+            "required": "ETA is Required"
+        }
+    },
+    {
+        "label": "Document Reference",
+        "controlType": "textarea",
+        "attributes": {
+        "formControlName": "documentReference",
+        "maxLength": "",
+        "minLength": "",
+        "placeholder": "Document Reference",
+        "class": "col-md-12 mb-3",
+        "disabled": false,
+        "hidden": false,
+        "value": "",
+        "readonly": false
+        }
+    },
+    {
+        "label": "Note",
+        "controlType": "input",
+        "attributes": {
+            "type": "text",
+            "formControlName": "note",
+            "maxLength": "",
+            "minLength": "",
+            "placeholder": "Note",
+            "class": "col-md-12 mb-2",
+            "disabled": false,
+            "hidden": false,
+            "value": "",
+            "readonly": false
+        }
+    }
+]

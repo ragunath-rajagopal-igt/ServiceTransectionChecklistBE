@@ -1,0 +1,36 @@
+[
+    {
+      "label": "Severity",
+      "controlType": "input",
+      "attributes": {
+        "type": "text",
+        "formControlName": "severity",
+        "placeholder": "Enter severity",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "maxLength": 50,
+        "minLength": 3,
+        "value": "",
+        "disabled": false,
+        "readonly": false
+      },
+      "validationMessages": {
+        "required": "severity is required.",
+        "maxLength": "severity cannot exceed 50 characters.",
+        "minLength": "severity must be at least 5 characters long."
+      }
+    },
+    {
+        "label": "Active",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "active",
+        "placeholder": "Select Active",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    }
+]

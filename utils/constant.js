@@ -1,4 +1,16 @@
 exports.constant = {
+    SERVER_ERROR: 500,
+    adminAction:[
+        {
+            value:"active",
+            label:"Active"
+        },
+        {
+            value:"deactive",
+            label:"Deactive"
+        }
+    ],
+
     severityOption:[
         {
             value:"CRITICAL",

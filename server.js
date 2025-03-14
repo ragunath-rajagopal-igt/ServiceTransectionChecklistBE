@@ -42,6 +42,10 @@ app.use("/api/service-management", require("./routes/serviceManagementRoutes"));
 //technical
 app.use("/api/technical", require("./routes/technicalRoutes"));
 
+
+//admin
+app.use("/api/admin/severity", require("./routes/severityRoutes"));
+
 //project movement
 // app.use("/api/project-movement", require("./routes/projectMovementRoutes"));
 

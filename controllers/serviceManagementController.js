@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const ServiceManagementModel = require("../models/serviceManagementModel");
 const { constant } = require("../utils/constant");
+const { constants } = require("../utils/constants");
 const { createLogger } = require('../utils/loggerService')
 const { createFormFieldFromJSON } = require('../utils/formFieldHandler');
 const loggerService = createLogger('Impact');
@@ -31,15 +32,30 @@ const generateForm = asyncHandler(async (req, res) => {
 
   } catch(error) {
     res.status(400).json(req.body);
-    res.error("creation failed", constants.VALIDATION_ERROR);
+    // res.error("creation failed", constants.VALIDATION_ERROR);
   }
 });
 
 
 //@desc Add and Edit User
 const generateUserFormBuild = asyncHandler(async(user) => {
+  const severityOpt = await severityModel.aggregate([
+    { 
+      $project: {
+        label: 1, 
+        value: "$severity",
+        active:1
+      }
+    }, 
+    {
+      $match: { active: 'active' }
+    },
+    { 
+      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+    }
+  ]);
   const dynamicOptions = {
-    severity: constant.severityOption,
+    severity: severityOpt,
     subArea: constant.subAreaOption,
     itemActivity: constant.itemActivityOption,
     productName: constant.productNameOption,

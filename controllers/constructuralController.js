@@ -5,6 +5,7 @@ const { createLogger } = require('../utils/loggerService')
 const { createFormFieldFromJSON } = require('../utils/formFieldHandler');
 const loggerService = createLogger('Impact');
 const constructuralFormFields = require('../formFields/constructuralFields.json');
+const severityModel = require("../models/admin/severityModel");
 
 
 //@desc Edit User
@@ -38,8 +39,23 @@ const generateForm = asyncHandler(async (req, res) => {
 
 //@desc Add and Edit User
 const generateUserFormBuild = asyncHandler(async(user) => {
+const severityOpt = await severityModel.aggregate([
+    { 
+      $project: {
+        label: 1, 
+        value: "$severity",
+        active:1
+      }
+    }, 
+    {
+      $match: { active: 'active' }
+    },
+    { 
+      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+    }
+  ]);
   const dynamicOptions = {
-    severity: constant.severityOption,
+    severity: severityOpt,
     subArea: constant.subAreaOption,
     itemActivity: constant.itemActivityOption,
     productName: constant.productNameOption,

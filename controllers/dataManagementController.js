@@ -5,8 +5,8 @@ const { createLogger } = require('../utils/loggerService')
 const { createFormFieldFromJSON } = require('../utils/formFieldHandler');
 const loggerService = createLogger('Impact');
 const dataManagementFormFields = require('../formFields/dataManagementFields.json');
-
-
+const severityModel = require("../models/admin/severityModel");
+const subareaModel = require("../models/admin/subareaModel");
 //@desc Edit User
 //@route POST /api/user/edit
 //@access private
@@ -53,9 +53,24 @@ const generateUserFormBuild = asyncHandler(async(user) => {
         $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
       }
     ]);
+      const subareaOpt = await subareaModel.aggregate([
+        { 
+          $project: {
+            label: 1, 
+            value: "$subarea",
+            active:1
+          }
+        }, 
+        {
+          $match: { active: 'active' }
+        },
+        { 
+          $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+        }
+      ]);
   const dynamicOptions = {
     severity: severityOpt,
-    subArea: constant.subAreaOption,
+    subArea: subareaOpt,
     itemActivity: constant.itemActivityOption,
     productName: constant.productNameOption,
     owner: constant.ownerNameOption,

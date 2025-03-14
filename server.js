@@ -45,6 +45,7 @@ app.use("/api/technical", require("./routes/technicalRoutes"));
 
 //admin
 app.use("/api/admin/severity", require("./routes/severityRoutes"));
+app.use("/api/admin/subarea", require("./routes/subAreamRoutes"));
 
 //project movement
 // app.use("/api/project-movement", require("./routes/projectMovementRoutes"));

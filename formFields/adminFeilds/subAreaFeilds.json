@@ -1,11 +1,11 @@
 [
     {
-      "label": "Severity",
+      "label": "Sub Area",
       "controlType": "input",
       "attributes": {
         "type": "text",
-        "formControlName": "severity",
-        "placeholder": "Enter severity",
+        "formControlName": "subarea",
+        "placeholder": "Enter Sub Area",
         "required": true,
         "class": "col-md-12 mb-3",
         "maxLength": 50,
@@ -15,9 +15,9 @@
         "readonly": false
       },
       "validationMessages": {
-        "required": "severity is required.",
-        "maxLength": "severity cannot exceed 50 characters.",
-        "minLength": "severity must be at least 3 characters long."
+        "required": "Sub Area is required.",
+        "maxLength": "Sub Area cannot exceed 50 characters.",
+        "minLength": "Sub Area must be at least 3 characters long."
       }
     },
     {

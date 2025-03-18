@@ -7,6 +7,10 @@ const loggerService = createLogger('Impact');
 const technicalFormFields = require('../formFields/technicalFields.json');
 const severityModel = require("../models/admin/severityModel");
 const subareaModel = require("../models/admin/subareaModel");
+const itemModel = require("../models/admin/itemModel");
+const productNameModel = require("../models/admin/productnameModel");
+const ownerModel = require("../models/admin/ownerModel");
+const statusModel = require("../models/admin/statusModel");
 
 //@desc Edit User
 //@route POST /api/user/edit
@@ -69,13 +73,73 @@ const generateUserFormBuild = asyncHandler(async(user) => {
             $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
           }
         ]);
+        const itemOpt = await itemModel.aggregate([
+                      { 
+                        $project: {
+                          label: 1, 
+                          value: "$itemActivity",
+                          active:1
+                        }
+                      }, 
+                      {
+                        $match: { active: 'active' }
+                      },
+                      { 
+                        $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+                      }
+                    ]);
+                    const productnameOpt = await productNameModel.aggregate([
+                      { 
+                        $project: {
+                          label: 1, 
+                          value: "$productName",
+                          active:1
+                        }
+                      }, 
+                      {
+                        $match: { active: 'active' }
+                      },
+                      { 
+                        $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+                      }
+                    ]);
+                    const ownerOpt = await ownerModel.aggregate([
+                      { 
+                        $project: {
+                          label: 1, 
+                          value: "$owner",
+                          active:1
+                        }
+                      }, 
+                      {
+                        $match: { active: 'active' }
+                      },
+                      { 
+                        $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+                      }
+                    ]);
+                    const statusOpt = await statusModel.aggregate([
+                      { 
+                        $project: {
+                          label: 1, 
+                          value: "$status",
+                          active:1
+                        }
+                      }, 
+                      {
+                        $match: { active: 'active' }
+                      },
+                      { 
+                        $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+                      }
+                    ]);
   const dynamicOptions = {
     severity: severityOpt,
     subArea: subareaOpt,
-    itemActivity: constant.itemActivityOption,
-    productName: constant.productNameOption,
-    owner: constant.ownerNameOption,
-    status: constant.statusOption,
+    itemActivity: itemOpt,
+    productName: productnameOpt,
+    owner: ownerOpt,
+    status: statusOpt,
   }
   const disabledFields = [];
   const cloneField = structuredClone(technicalFormFields);

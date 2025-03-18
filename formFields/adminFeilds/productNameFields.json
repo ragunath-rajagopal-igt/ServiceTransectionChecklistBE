@@ -1,0 +1,36 @@
+[
+    {
+      "label": "Product Name",
+      "controlType": "input",
+      "attributes": {
+        "type": "text",
+        "formControlName": "productName",
+        "placeholder": "Enter Product Name",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "maxLength": 50,
+        "minLength": 3,
+        "value": "",
+        "disabled": false,
+        "readonly": false
+      },
+      "validationMessages": {
+        "required": "Product Name is required.",
+        "maxLength": "Product Name cannot exceed 50 characters.",
+        "minLength": "Product Name must be at least 3 characters long."
+      }
+    },
+    {
+        "label": "Active",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "active",
+        "placeholder": "Select Active",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    }
+]

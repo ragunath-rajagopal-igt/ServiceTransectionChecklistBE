@@ -1,0 +1,36 @@
+[
+    {
+      "label": "Owner Name",
+      "controlType": "input",
+      "attributes": {
+        "type": "text",
+        "formControlName": "owner",
+        "placeholder": "Enter Owner Name",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "maxLength": 50,
+        "minLength": 3,
+        "value": "",
+        "disabled": false,
+        "readonly": false
+      },
+      "validationMessages": {
+        "required": "Owner Name is required.",
+        "maxLength": "Owner Name cannot exceed 50 characters.",
+        "minLength": "Owner Name must be at least 3 characters long."
+      }
+    },
+    {
+        "label": "Active",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "active",
+        "placeholder": "Select Active",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    }
+]

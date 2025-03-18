@@ -46,6 +46,11 @@ app.use("/api/technical", require("./routes/technicalRoutes"));
 //admin
 app.use("/api/admin/severity", require("./routes/severityRoutes"));
 app.use("/api/admin/subarea", require("./routes/subAreamRoutes"));
+app.use("/api/admin/item", require("./routes/itemRoutes"));
+app.use("/api/admin/productname", require("./routes/productNameRoutes"));
+app.use("/api/admin/ownername", require("./routes/ownerRoutes"));
+app.use("/api/admin/status", require("./routes/statusRoutes"));
+
 
 //project movement
 // app.use("/api/project-movement", require("./routes/projectMovementRoutes"));

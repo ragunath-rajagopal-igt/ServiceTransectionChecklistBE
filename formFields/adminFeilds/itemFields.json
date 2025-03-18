@@ -1,0 +1,36 @@
+[
+    {
+      "label": "Item/Action",
+      "controlType": "input",
+      "attributes": {
+        "type": "text",
+        "formControlName": "itemActivity",
+        "placeholder": "Enter Item/Action",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "maxLength": 500,
+        "minLength": 3,
+        "value": "",
+        "disabled": false,
+        "readonly": false
+      },
+      "validationMessages": {
+        "required": "Item/Action is required.",
+        "maxLength": "Item/Action cannot exceed 500 characters.",
+        "minLength": "Item/Action must be at least 3 characters long."
+      }
+    },
+    {
+        "label": "Active",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "active",
+        "placeholder": "Select Active",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    }
+]

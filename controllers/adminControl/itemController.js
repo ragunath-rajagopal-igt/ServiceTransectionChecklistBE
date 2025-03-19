@@ -9,7 +9,7 @@ const loggerService = createLogger('Impact');
 
 // get list data
 const getItem = asyncHandler(async (req, res) => {
-  const users = await ItemModel.find().sort({ createdAt: -1 }).limit(10);
+  const users = await ItemModel.find().sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

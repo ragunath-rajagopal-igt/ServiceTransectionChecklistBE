@@ -9,7 +9,7 @@ const loggerService = createLogger('Impact');
 
 // get list data
 const getSubarea = asyncHandler(async (req, res) => {
-  const users = await subareaModel.find().sort({ createdAt: -1 }).limit(10);
+  const users = await subareaModel.find().sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

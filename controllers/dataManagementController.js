@@ -170,7 +170,7 @@ const saveDataManagement = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getDataManagement = asyncHandler(async (req, res) => {
-  const users = await DataManagementModel.find().sort({ createdAt: -1 }).limit(10);
+  const users = await DataManagementModel.find().sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

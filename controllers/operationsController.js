@@ -171,7 +171,7 @@ const saveOperations = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getOperations = asyncHandler(async (req, res) => {
-  const users = await OperationsModel.find().sort({ createdAt: -1 }).limit(10);
+  const users = await OperationsModel.find().sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

@@ -170,7 +170,7 @@ const saveTechnical = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getTechnical = asyncHandler(async (req, res) => {
-  const users = await TechnicalModel.find().sort({ createdAt: -1 }).limit(10);
+  const users = await TechnicalModel.find().sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

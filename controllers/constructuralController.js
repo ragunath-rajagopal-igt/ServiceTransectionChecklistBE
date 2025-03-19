@@ -170,7 +170,7 @@ const saveConstructural = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getConstructural = asyncHandler(async (req, res) => {
-  const users = await ConstructuralModel.find().sort({ createdAt: -1 }).limit(10);
+  const users = await ConstructuralModel.find().sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

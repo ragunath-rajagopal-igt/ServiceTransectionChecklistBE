@@ -156,6 +156,8 @@ const generateUserFormBuild = asyncHandler(async(user) => {
 //@access private
 const saveDataManagement = asyncHandler(async (req, res) => {
     const data = req.body;   
+    const siteName = req.headers['sitename']; 
+    data.siteName = siteName;
     const user = await DataManagementModel.create(data);    
     if (user) {
       res.status(201).json({ message: "Created Successfully"});
@@ -170,7 +172,9 @@ const saveDataManagement = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getDataManagement = asyncHandler(async (req, res) => {
-  const users = await DataManagementModel.find().sort({ createdAt: -1 });
+  const siteName = req.headers['sitename']; 
+
+  const users = await DataManagementModel.find({siteName}).sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

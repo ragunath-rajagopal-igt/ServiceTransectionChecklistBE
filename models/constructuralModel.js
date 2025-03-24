@@ -25,6 +25,9 @@ const constructuralSchema = mongoose.Schema({
   documentReference:{
     type: String,
   },
+  siteName:{
+    type: String,
+  },
   note:{
     type: String,
   },

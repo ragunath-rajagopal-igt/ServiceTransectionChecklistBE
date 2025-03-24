@@ -156,6 +156,8 @@ const severityOpt = await severityModel.aggregate([
 //@access private
 const saveConstructural = asyncHandler(async (req, res) => {
     const data = req.body;   
+    const siteName = req.headers['sitename']; 
+    data.siteName = siteName;
     const user = await ConstructuralModel.create(data);    
     if (user) {
       res.status(201).json({ message: "Created Successfully"});
@@ -170,7 +172,8 @@ const saveConstructural = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getConstructural = asyncHandler(async (req, res) => {
-  const users = await ConstructuralModel.find().sort({ createdAt: -1 });
+  const siteName = req.headers['sitename']; 
+  const users = await ConstructuralModel.find({siteName : siteName}).sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

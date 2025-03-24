@@ -157,6 +157,8 @@ const generateUserFormBuild = asyncHandler(async(user) => {
 //@access private
 const saveServiceManagement = asyncHandler(async (req, res) => {
     const data = req.body;   
+    const siteName = req.headers['sitename']; 
+    data.siteName = siteName;
     const user = await ServiceManagementModel.create(data);    
     if (user) {
       res.status(201).json({ message: "Created Successfully"});
@@ -171,7 +173,8 @@ const saveServiceManagement = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getServiceManagement = asyncHandler(async (req, res) => {
-  const users = await ServiceManagementModel.find().sort({ createdAt: -1 });
+  const siteName = req.headers['sitename']; 
+  const users = await ServiceManagementModel.find({siteName}).sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

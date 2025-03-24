@@ -19,6 +19,9 @@ const dataManagementSchema = mongoose.Schema({
   status:{
     type: String,
   },
+  siteName:{
+    type: String,
+  },
   eta:{
     type: String,
   },

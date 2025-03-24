@@ -156,6 +156,8 @@ const generateUserFormBuild = asyncHandler(async(user) => {
 //@access private
 const saveTechnical = asyncHandler(async (req, res) => {
     const data = req.body;   
+    const siteName = req.headers['sitename']; 
+    data.siteName = siteName;
     const user = await TechnicalModel.create(data);    
     if (user) {
       res.status(201).json({ message: "Created Successfully"});
@@ -170,7 +172,8 @@ const saveTechnical = asyncHandler(async (req, res) => {
 //@route GET /api/user/list
 //@access private
 const getTechnical = asyncHandler(async (req, res) => {
-  const users = await TechnicalModel.find().sort({ createdAt: -1 });
+  const siteName = req.headers['sitename']; 
+  const users = await TechnicalModel.find({siteName}).sort({ createdAt: -1 });
   if (users) {
     res.status(201).json(users);
   }

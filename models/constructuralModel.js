@@ -31,6 +31,12 @@ const constructuralSchema = mongoose.Schema({
   note:{
     type: String,
   },
+  module:{
+    type: String,
+  },
+  download: {
+    type:String,
+  },
   createdBy: {
     type: String,
   },

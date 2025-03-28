@@ -158,6 +158,7 @@ const saveTechnical = asyncHandler(async (req, res) => {
     const data = req.body;   
     const siteName = req.headers['sitename']; 
     data.siteName = siteName;
+    data.module = 'Technical';
     const user = await TechnicalModel.create(data);    
     if (user) {
       res.status(201).json({ message: "Created Successfully"});

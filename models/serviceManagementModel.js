@@ -22,6 +22,12 @@ const serviceManagementSchema = mongoose.Schema({
   siteName:{
     type: String,
   },
+  module:{
+    type: String,
+  },
+  download: {
+    type:String,
+  },
   eta:{
     type: String,
   },

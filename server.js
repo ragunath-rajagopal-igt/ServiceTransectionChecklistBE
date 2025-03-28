@@ -42,6 +42,9 @@ app.use("/api/service-management", require("./routes/serviceManagementRoutes"));
 //technical
 app.use("/api/technical", require("./routes/technicalRoutes"));
 
+//gen Document
+app.use("/api/gendoc", require("./routes/genDocRoutes"));
+
 
 //admin
 app.use("/api/admin/severity", require("./routes/severityRoutes"));

@@ -159,6 +159,7 @@ const saveServiceManagement = asyncHandler(async (req, res) => {
     const data = req.body;   
     const siteName = req.headers['sitename']; 
     data.siteName = siteName;
+    data.module = 'Service Management';
     const user = await ServiceManagementModel.create(data);    
     if (user) {
       res.status(201).json({ message: "Created Successfully"});

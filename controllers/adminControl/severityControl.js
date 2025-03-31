@@ -9,7 +9,7 @@ const loggerService = createLogger('Impact');
 
 // get list data
 const getSeveritiy = asyncHandler(async (req, res) => {
-  const users = await severityModel.find().sort({ createdAt: -1 });
+  const users = await severityModel.find().sort({ severity: 1 });
   if (users) {
     res.status(201).json(users);
   }

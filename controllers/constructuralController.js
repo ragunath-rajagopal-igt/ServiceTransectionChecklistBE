@@ -55,7 +55,7 @@ const severityOpt = await severityModel.aggregate([
       $match: { active: 'active' }
     },
     { 
-      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+      $sort: { severity: 1 } // Sort by 'createdAt' if necessary
     }
   ]);
   const subareaOpt = await subareaModel.aggregate([
@@ -70,7 +70,7 @@ const severityOpt = await severityModel.aggregate([
       $match: { active: 'active' }
     },
     { 
-      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+      $sort: { subarea: 1 } // Sort by 'createdAt' if necessary
     }
   ]);
   const itemOpt = await itemModel.aggregate([
@@ -85,7 +85,7 @@ const severityOpt = await severityModel.aggregate([
       $match: { active: 'active' }
     },
     { 
-      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+      $sort: { itemActivity: 1 } // Sort by 'createdAt' if necessary
     }
   ]);
   const productnameOpt = await productNameModel.aggregate([
@@ -100,7 +100,7 @@ const severityOpt = await severityModel.aggregate([
       $match: { active: 'active' }
     },
     { 
-      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+      $sort: { productName: 1 } // Sort by 'createdAt' if necessary
     }
   ]);
   const ownerOpt = await ownerModel.aggregate([
@@ -115,7 +115,7 @@ const severityOpt = await severityModel.aggregate([
       $match: { active: 'active' }
     },
     { 
-      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+      $sort: { owner: 1 } // Sort by 'createdAt' if necessary
     }
   ]);
   const statusOpt = await statusModel.aggregate([
@@ -130,7 +130,7 @@ const severityOpt = await severityModel.aggregate([
       $match: { active: 'active' }
     },
     { 
-      $sort: { createdAt: -1 } // Sort by 'createdAt' if necessary
+      $sort: { status: 1 } // Sort by 'createdAt' if necessary
     }
   ]);
   const dynamicOptions = {

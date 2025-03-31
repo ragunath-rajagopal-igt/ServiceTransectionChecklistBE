@@ -9,7 +9,7 @@ const loggerService = createLogger('Impact');
 
 // get list data
 const getOwner = asyncHandler(async (req, res) => {
-  const users = await OwnerModel.find().sort({ createdAt: -1 });
+  const users = await OwnerModel.find().sort({ owner: 1 });
   if (users) {
     res.status(201).json(users);
   }

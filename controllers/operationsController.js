@@ -175,7 +175,7 @@ const saveOperations = asyncHandler(async (req, res) => {
 //@access private
 const getOperations = asyncHandler(async (req, res) => {
   const siteName = req.headers['sitename']; 
-  const users = await OperationsModel.find({siteName}).sort({ createdAt: -1 });
+  const users = await OperationsModel.find({siteName}).sort({ severity: 1 });
   if (users) {
     res.status(201).json(users);
   }

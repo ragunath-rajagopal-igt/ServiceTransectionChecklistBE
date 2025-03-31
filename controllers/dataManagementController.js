@@ -175,7 +175,7 @@ const saveDataManagement = asyncHandler(async (req, res) => {
 const getDataManagement = asyncHandler(async (req, res) => {
   const siteName = req.headers['sitename']; 
 
-  const users = await DataManagementModel.find({siteName}).sort({ createdAt: -1 });
+  const users = await DataManagementModel.find({siteName}).sort({ severity: 1 });
   if (users) {
     res.status(201).json(users);
   }

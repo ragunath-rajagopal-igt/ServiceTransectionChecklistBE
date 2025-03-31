@@ -14,11 +14,11 @@ const technicalModel = require("../models/technicalModel");
 //@access private
 async function getGenDocmentListData() {
   try {
-    const constructural = await constructuralModel.find();
-    const dataManagement = await DataManagementModel.find();
-    const operations = await operationModel.find();
-    const service = await serviceMangModel.find();
-    const techni = await technicalModel.find();
+    const constructural = await constructuralModel.find().sort({severity: 1 });
+    const dataManagement = await DataManagementModel.find().sort({severity: 1 });
+    const operations = await operationModel.find().sort({severity: 1 });
+    const service = await serviceMangModel.find().sort({severity: 1 });
+    const techni = await technicalModel.find().sort({severity: 1 });
     return {
       constructural,
       dataManagement,

@@ -1,0 +1,36 @@
+[
+    {
+      "label": "Site Name",
+      "controlType": "input",
+      "attributes": {
+        "type": "text",
+        "formControlName": "site",
+        "placeholder": "Enter Site Name",
+        "required": true,
+        "class": "col-md-12 mb-3",
+        "maxLength": 50,
+        "minLength": 3,
+        "value": "",
+        "disabled": false,
+        "readonly": false
+      },
+      "validationMessages": {
+        "required": "Site Name is required.",
+        "maxLength": "Site Name cannot exceed 50 characters.",
+        "minLength": "Site Name must be at least 3 characters long."
+      }
+    },
+    {
+        "label": "Active",
+        "controlType": "select",
+        "attributes": {
+        "formControlName": "active",
+        "placeholder": "Select Active",
+        "class": "col-md-12 mb-2",
+        "disabled": false,
+        "hidden": false,
+        "value": ""
+        },
+        "options": []
+    }
+]

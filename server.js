@@ -53,6 +53,7 @@ app.use("/api/admin/item", require("./routes/itemRoutes"));
 app.use("/api/admin/productname", require("./routes/productNameRoutes"));
 app.use("/api/admin/ownername", require("./routes/ownerRoutes"));
 app.use("/api/admin/status", require("./routes/statusRoutes"));
+app.use("/api/admin/site", require("./routes/siteRoutes"));
 
 
 //project movement

@@ -113,5 +113,15 @@ const deleteSite = asyncHandler(async (req, res) => {
   });
   
 
+const getSiteOptions = asyncHandler(async(format)=>{
+  const siteDetails = await SiteModel.find()
+  .exec();
 
-module.exports = { generateForm, saveSite , getSite, updateSite , deleteSite};
+  return siteDetails.map(category=>({
+    value:category.site,
+    label:category.site
+  }))
+})
+
+
+module.exports = { generateForm, saveSite , getSite, updateSite , deleteSite,getSiteOptions};

@@ -9,15 +9,13 @@
         "required": true,
         "class": "col-md-12 mb-3",
         "maxLength": 50,
-        "minLength": 3,
         "value": "",
         "disabled": false,
         "readonly": false
       },
       "validationMessages": {
         "required": "Site Name is required.",
-        "maxLength": "Site Name cannot exceed 50 characters.",
-        "minLength": "Site Name must be at least 3 characters long."
+        "maxLength": "Site Name cannot exceed 50 characters."
       }
     },
     {

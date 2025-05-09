@@ -1,265 +1,60 @@
 [
     {
-        "label": "HCL SAP No",
-        "controlType": "input",
-        "attributes": {
-            "type": "number",
-            "formControlName": "hclSapNo",
-            "maxLength": 8,
-            "minLength": 8,
-            "placeholder": "",
-            "required": true,
-            "class": "col-md-6 mb-2",
-            "disabled": false,
-            "hidden": false,
-            "value": "",
-            "readonly": false
-        },
-        "validationMessages": {
-            "required": "HCL SAP No is required",
-            "maxLength": "HCL SAP No. must be 8 digits",
-            "minLength": "HCL SAP No. must be 8 digits"
-        }
-    },
-    {
-        "label": "First Name",
-        "controlType": "input",
-        "attributes": {
-        "type": "text",
-        "formControlName": "firstName",
-        "maxLength": "",
-        "minLength": "",
-        "placeholder": "",
-        "required": true,
-        "class": "col-md-6 mb-3",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "First Name is required"
-        }
-    },
-    {
-        "label": "Last Name",
-        "controlType": "input",
-        "attributes": {
-        "type": "text",
-        "formControlName": "lastName",
-        "maxLength": "",
-        "minLength": "",
-        "placeholder": "",
-        "required": true,
-        "class": "col-md-6 mb-3",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "Last Name is required"
-        }
-    },
-    {
         "label": "Name",
         "controlType": "input",
         "attributes": {
-        "type": "text",
-        "formControlName": "name",
-        "maxLength": "",
-        "minLength": "",
-        "placeholder": "",
-        "required": true,
-        "class": "col-md-6 mb-3",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "Name is required"
+          "type": "text",
+          "formControlName": "username",
+          "placeholder": "Enter your username",
+          "required": false,
+          "class": "col-md-12 mb-3",
+          "maxLength": 50,
+          "minLength": 5,
+          "value": "",
+          "disabled": false,
+          "readonly": false
         }
-    },
-    {
-        "label": "Location",
-        "controlType": "select",
-        "attributes": {
-        "formControlName": "location",
-        "placeholder": "Select location",
-        "required": true,
-        "class": "col-md-6 mb-2",
-        "disabled": false,
-        "hidden": false,
-        "value": ""
-        },
-        "options": [],
-        "validationMessages": {
-        "required": "Location is required."
-        }
-    },
-    {
-        "label": "Sub Location",
-        "controlType": "select",
-        "attributes": {
-        "formControlName": "subLocation",
-        "placeholder": "Select sub location",
-        "required": true,
-        "class": "col-md-6 mb-2",
-        "disabled": false,
-        "hidden": false,
-        "value": ""
-        },
-        "options": [],
-        "validationMessages": {
-        "required": "Sub Location is required."
-        }
-    },
-    {
-        "label": "Gender",
-        "controlType": "select",
-        "attributes": {
-        "formControlName": "gender",
-        "placeholder": "Select Gender",
-        "required": true,
-        "class": "col-md-6 mb-2",
-        "disabled": false,
-        "hidden": false,
-        "value": ""
-        },
-        "options": [],
-        "validationMessages": {
-        "required": "Gender is required."
-        }
-    },
-    {
-        "label": "DOB (MM/DD/YYYY)",
-        "controlType": "date",
-        "attributes": {
-        "type": "date",
-        "formControlName": "dob",
-        "placeholder": "Select date of birth",
-        "required": true,
-        "class": "col-md-6 mb-2",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "Please Enter the DOB."
-        }
-    },
-    {
-        "label": "Designation",
+      },
+      {
+        "label": "Email",
         "controlType": "input",
         "attributes": {
-        "type": "text",
-        "formControlName": "designation",
-        "maxLength": "",
-        "minLength": "",
-        "placeholder": "",
-        "required": false,
-        "class": "col-md-6 mb-3",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "Designation is required"
+          "type": "email",
+          "formControlName": "email",
+          "placeholder": "Enter your email address",
+          "required": false,
+          "class": "col-md-12 mb-3",
+          "value": "",
+          "disabled": false,
+          "readonly": false
         }
-    },
-    {
-        "label": "Employee SubGroup",
+      },
+      {
+        "label": "Password",
         "controlType": "input",
         "attributes": {
-        "type": "text",
-        "formControlName": "employeeSubGroup",
-        "maxLength": "",
-        "minLength": "",
-        "placeholder": "",
-        "required": false,
-        "class": "col-md-6 mb-3",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "Name is required"
+          "type": "password",
+          "formControlName": "password",
+          "placeholder": "Enter your Password",
+          "required": false,
+          "class": "col-md-12 mb-3",
+          "value": "",
+          "disabled": false,
+          "readonly": false
         }
-    },
-    {
-        "label": "DOJ Of HCL (MM/DD/YYYY)",
-        "controlType": "date",
-        "attributes": {
-        "type": "date",
-        "formControlName": "dojOfHCL",
-        "placeholder": "Select DOJ Of HCL",
-        "required": true,
-        "class": "col-md-6 mb-2",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "Please Enter the DOJ Of HCL."
-        }
-    },
-    {
-        "label": "DOJ Of IGT (MM/DD/YYYY)",
-        "controlType": "date",
-        "attributes": {
-        "type": "date",
-        "formControlName": "dojOfIGT",
-        "placeholder": "Select DOJ Of IGT",
-        "required": true,
-        "class": "col-md-6 mb-2",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "Please Enter the DOJ Of IGT."
-        }
-    },
-    {
-        "label": "HCL Email",
-        "controlType": "input",
-        "attributes": {
-        "type": "text",
-        "formControlName": "hclEmail",
-        "minLength": "",
-        "placeholder": "",
-        "required": true,
-        "class": "col-md-6 mb-3",
-        "disabled": false,
-        "hidden": false,
-        "value": "",
-        "readonly": false
-        },
-        "validationMessages": {
-        "required": "HCL Email is required"
-        }
-    },
-    {
-        "label": "HCL Booking Manager",
+      },
+      {
+        "label": "Sites",
         "controlType": "select-search",
         "attributes": {
-            "formControlName": "hclReportingManagerSapNo",
-            "placeholder": "Select HCL Reporting Manager",
-            "required": true,
-            "class": "col-md-6 mb-2",
+            "formControlName": "sites",
+            "placeholder": "Select Sites",
+            "required": false,
+            "class": "col-md-12 mb-3",
             "disabled": false,
             "hidden": false,
             "value": ""
         },
-        "options": [],
-        "validationMessages": {
-            "required": "HCL Reporting Manager SAP No is required."
-        }
+        "options": []
     }
 ]

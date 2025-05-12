@@ -11,9 +11,9 @@ const createUserSchema = mongoose.Schema({
   password:{
     type: String,
   },
-  sites:{
+  sites:[{
     type: String,
-  },
+  }],
   createdBy: {
     type: String,
   },

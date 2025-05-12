@@ -45,7 +45,7 @@
       },
       {
         "label": "Sites",
-        "controlType": "select-search",
+        "controlType": "select",
         "attributes": {
             "formControlName": "sites",
             "placeholder": "Select Sites",
@@ -53,7 +53,8 @@
             "class": "col-md-12 mb-3",
             "disabled": false,
             "hidden": false,
-            "value": ""
+            "value": "",
+            "multiple":true
         },
         "options": []
     }

@@ -308,17 +308,18 @@ const loginUser = asyncHandler(async (req, res) => {
 const getUserPermission = asyncHandler(async (user) => {
   try {
     let userPermission = [];
-    if (user.role && user.isAdmin !== true) {
-      const userPermissionData = await moduleRolePermissionController.userModulePermission(user.role);
-      if (userPermissionData && userPermissionData.moduleCode) {
-        userPermission = userPermissionData.moduleCode;
-      }
-    } else if (user.role && user.isAdmin === true) {
-      const userPermissionData = await moduleController.allModules();
+    // if (user.isAdmin !== true) {
+    //   const userPermissionData = await moduleRolePermissionController.userModulePermission(user.role);
+    //   if (userPermissionData && userPermissionData.moduleCode) {
+    //     userPermission = userPermissionData.moduleCode;
+    //   }
+    // } else if (user.isAdmin === true) {
+     
+    // }
+     const userPermissionData = await moduleController.allModules();
       if (userPermissionData) {
         userPermission = userPermissionData;
       }
-    }
     return userPermission;
   } catch (error) {
     // Log the error and send a generic server error response

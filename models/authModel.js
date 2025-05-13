@@ -9,22 +9,25 @@ const authSchema = mongoose.Schema(
     role: {
       code: {
         type: String,
-        required: [true, "Please add the role code"],
+        required: [false, "Please add the role code"],
       },
       name: {
         type: String,
-        required: [true, "Please add the role name"],
+        required: [false, "Please add the role name"],
       },
     },
     organization: [{
       code: {
         type: String,
-        required: [true, "Please add the organization code"],
+        required: [false, "Please add the organization code"],
       },
       name: {
         type: String,
-        required: [true, "Please add the organization name"],
+        required: [false, "Please add the organization name"],
       },
+    }],
+    sites:[{
+    type: String,
     }],
     username: {
       type: String,

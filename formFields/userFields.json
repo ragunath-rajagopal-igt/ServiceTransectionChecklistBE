@@ -8,8 +8,6 @@
           "placeholder": "Enter your username",
           "required": false,
           "class": "col-md-12 mb-3",
-          "maxLength": 50,
-          "minLength": 5,
           "value": "",
           "disabled": false,
           "readonly": false

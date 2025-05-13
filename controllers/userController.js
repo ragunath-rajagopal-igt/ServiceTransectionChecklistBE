@@ -7,7 +7,9 @@ const userFields = require('../formFields/userFields.json');
 const userModel = require("../models/userModel");
 const loggerService = createLogger('Impact');
 const { getSiteOptions } = require('../controllers/adminControl/siteController');
+const bcrypt = require("bcrypt");
 
+const User = require("../models/authModel"); // authmodel
 // get list data
 const getUsers = asyncHandler(async (req, res) => {
   const users = await userModel.find().sort({ status: 1 });
@@ -68,7 +70,32 @@ const saveUser = asyncHandler(async (req, res) => {
       password:req.body.password,
       sites:req.body.sites
     }
-    const user = await userModel.create(loadData);    
+
+      let hashedPassword = '';
+    // Hash password
+    if (req.body.password) {
+      hashedPassword = await bcrypt.hash(req.body.password, 10);
+    }
+    
+    const user = await userModel.create(loadData);  
+
+      // Create the user
+    const authuser = await User.create({
+      username:req.body.username,
+      email:req.body.email,
+      password: hashedPassword,
+      role:'', // Include role information
+      organization:[], // Include organization information
+      isAdmin: false, // Default value if not provided
+      isEmailVerified: true,
+      createdBy:"1", // Set createdBy
+      updatedBy:"1",  // Set updatedBy
+      sites:req.body.sites
+    });
+
+
+
+
     if (user) {
       res.status(201).json({ message: "Created Successfully"});
     } else {

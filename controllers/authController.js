@@ -13,6 +13,7 @@ const refreshTokenModel = require("../models/refreshTokenModel");
 const { logAction } = require("./loggerController");
 // Create a logger named 'AuthService'
 const loggerService = createLogger('AuthService');
+const { getSiteOptions } = require('../controllers/adminControl/siteController');
 
 const MODULE_NAME = constants.LOGGER_MODULE.appUser;
 // @desc Register a user
@@ -279,6 +280,9 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const refreshToken = await generateRefreshToken(user._id);
 
+    if(user.isAdmin === true){
+      var siteallData = await getSiteOptions();
+    }
     // Create user details object
     const userDetails = {
       name: user.username,
@@ -286,6 +290,7 @@ const loginUser = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       role: user.role,
       organization: user.organization,
+      sites: user.isAdmin? siteallData: user.sites,
       permission: userPermission,
     };
 

@@ -28,6 +28,9 @@ const constructuralSchema = mongoose.Schema({
   siteName:{
     type: String,
   },
+  userName:{
+    type: String
+  },
   note:{
     type: String,
   },

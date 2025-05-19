@@ -12,14 +12,15 @@ const technicalModel = require("../models/technicalModel");
 //@desc Get Users
 //@route GET /api/user/list
 //@access private
-async function getGenDocmentListData(siteName) {
+async function getGenDocmentListData(siteName,UserName) {
   try {
     const name = siteName;
-    const constructural = await constructuralModel.find({siteName : name}).sort({severity: 1 });
-    const dataManagement = await DataManagementModel.find({siteName : name}).sort({severity: 1 });
-    const operations = await operationModel.find({siteName : name}).sort({severity: 1 });
-    const service = await serviceMangModel.find({siteName : name}).sort({severity: 1 });
-    const techni = await technicalModel.find({siteName : name}).sort({severity: 1 });
+    const username = UserName;
+    const constructural = await constructuralModel.find({siteName : name, userName:username}).sort({severity: 1 });
+    const dataManagement = await DataManagementModel.find({siteName : name, userName:username}).sort({severity: 1 });
+    const operations = await operationModel.find({siteName : name, userName:username}).sort({severity: 1 });
+    const service = await serviceMangModel.find({siteName : name, userName:username}).sort({severity: 1 });
+    const techni = await technicalModel.find({siteName : name, userName:username}).sort({severity: 1 });
     return {
       constructural,
       dataManagement,
@@ -39,7 +40,8 @@ async function getGenDocmentListData(siteName) {
 const getGenDocmentList = asyncHandler(async (req, res) => {
   try {
     const siteName = req.headers['sitename']; 
-    const data = await getGenDocmentListData(siteName);
+    const username = req.headers['username']; 
+    const data = await getGenDocmentListData(siteName,username);
     res.json(data); // Send the data as a JSON response
   } catch (err) {
     res.status(500).json({ error: "Failed to retrieve data" });

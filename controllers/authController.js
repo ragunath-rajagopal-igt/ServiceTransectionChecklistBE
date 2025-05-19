@@ -282,7 +282,10 @@ const loginUser = asyncHandler(async (req, res) => {
 
     if(user.isAdmin === true){
       var siteallData = await getSiteOptions();
+    }else{
+      var userData = await getuserSiteOptions(user);
     }
+
     // Create user details object
     const userDetails = {
       name: user.username,
@@ -290,7 +293,7 @@ const loginUser = asyncHandler(async (req, res) => {
       isAdmin: user.isAdmin,
       role: user.role,
       organization: user.organization,
-      sites: user.isAdmin? siteallData: user.sites,
+      sites: user.isAdmin? siteallData: userData,
       permission: userPermission,
     };
 
@@ -524,6 +527,17 @@ const updatePassword = asyncHandler(async (req, res) => {
   }
 
 })
+
+function getuserSiteOptions(users){
+console.log("users",users);
+const sites = users.sites.map((data)=>{
+  return {
+    label: data,
+    value:data
+  }
+})
+return sites;
+}
 
 
 module.exports = { registerUser, loginUser, currentUser, logoutUser, refreshTokenHandler, verifyAccount, updatePassword, updateRegisteredAppUser };

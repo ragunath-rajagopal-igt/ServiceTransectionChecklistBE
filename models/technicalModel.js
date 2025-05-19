@@ -22,6 +22,9 @@ const technicalSchema = mongoose.Schema({
   siteName:{
     type: String,
   },
+  userName:{
+    type: String
+  },
   module:{
     type: String,
   },

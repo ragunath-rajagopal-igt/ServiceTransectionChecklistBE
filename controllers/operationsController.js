@@ -158,7 +158,9 @@ const generateUserFormBuild = asyncHandler(async(user) => {
 const saveOperations = asyncHandler(async (req, res) => {
     const data = req.body;   
     const siteName = req.headers['sitename']; 
+    const username = req.headers['username'];
     data.siteName = siteName;
+    data.userName = username;
     data.module = 'Operations';
     const user = await OperationsModel.create(data);    
     if (user) {
@@ -175,7 +177,8 @@ const saveOperations = asyncHandler(async (req, res) => {
 //@access private
 const getOperations = asyncHandler(async (req, res) => {
   const siteName = req.headers['sitename']; 
-  const users = await OperationsModel.find({siteName}).sort({ severity: 1 });
+  const username = req.headers['username'];
+  const users = await OperationsModel.find({siteName,userName:username}).sort({ severity: 1 });
   if (users) {
     res.status(201).json(users);
   }
